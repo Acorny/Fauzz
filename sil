@@ -1,3 +1,6 @@
+
+-so9ds
+
 local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/Acorny/newspades/main/vainstracer/spadessilent/gumnemstyle/rianisathug?token=GHSAT0AAAAAAB3JH7RMBPIMXQJEFN6S3BRKY4WUVEA"))()
 Aiming.TeamCheck(false)
 
