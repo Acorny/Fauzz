@@ -1,0 +1,48 @@
+local Settings = getgenv().Settings
+
+            if locksectionenabled then
+                --lock section
+                local Anti = Window:CreateTab("Aiming")
+
+                local triggerbotsection = Anti:CreateSector("Trigger bot", "left")
+                getgenv().nigger = false
+                getgenv().enabletimer = false
+                getgenv().timer = 0.01
+                local triggerkeybind =
+                    triggerbotsection:AddToggle(
+                    "Enable",
+                    false,
+                    function(Boolean)
+                        getgenv().nigger = Boolean
+                    end
+                )
+                 --Memelouse#3150
+                local triggerdelay =
+                    triggerbotsection:AddToggle(
+                    "Delay",
+                    false,
+                    function(Boolean)
+                        getgenv().enabletimer = Boolean
+                    end
+                )
+                triggerkeybind:AddKeybind()
+
+                game:GetService("RunService").Heartbeat:Connect(
+                    function()
+                        if getgenv().nigger == true then
+                            local target = game.Players.LocalPlayer:GetMouse().Target
+                            if target then
+                                if target.Parent:IsA("Model") then
+                                    for i, v in pairs(game:FindService("Players"):GetChildren()) do
+                                        if v.Name == target.Parent.Name or v.Name == target.Parent.Parent.Name then
+                                            if getgenv().enabletimer == true then
+                                                Wait(getgenv().timer)
+                                            end
+                                            mouse1click()
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                )
