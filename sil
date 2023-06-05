@@ -37,14 +37,26 @@ local tableinsert = table.insert
 getgenv().Aiming = {
     Enabled = true,
 
+    EnableKeybind = false,
+
+    UndergroundResolver = false,
+    ResolverNotification = false,
+    KeybindResolver = "x",
+
+    DetectDesync = false,
+    VelocityDetection = 70,
+
+    Notify = false,
+    Keybind = "v",
+
     ShowFOV = false,
-    FOV = 21,
+    FOV = 119,
     FOVSides = 300,
-    FOVColour = Color3fromRGB(0, 147, 255),
+    FOVColour = Color3fromRGB(255, 255, 255),
 
     VisibleCheck = true,
-    
-    HitChance = 95,
+
+    HitChance = 110,
 
     Selected = nil,
     SelectedPart = nil,
@@ -60,7 +72,7 @@ getgenv().Aiming = {
         },
         Players = {
             LocalPlayer,
-            1431529325
+            91318356
         }
     }
 }
@@ -69,7 +81,7 @@ local Aiming = getgenv().Aiming
 -- // Create circle
 local circle = Drawingnew("Circle")
 circle.Transparency = 1
-circle.Thickness = 2
+circle.Thickness = 3
 circle.Color = Aiming.FOVColour
 circle.Filled = false
 Aiming.FOVCircle = circle
@@ -427,6 +439,8 @@ function Aiming.GetClosestPlayerToCursor()
     Aiming.Selected = ClosestPlayer
     Aiming.SelectedPart = TargetPart
 end
+
+
 
 -- // Heartbeat Function
 Heartbeat:Connect(function()
